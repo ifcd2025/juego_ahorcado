@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del ahorcado</title>
+    <script src="ahorcado.js" type="module"></script>
+    <style>
+        * {
+            font-size: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: alpharope;
+            src: url(AlphaRope.ttf);
+        }
+        header {
+            font-family: alpharope;
+            text-align: center;
+            background-color: rgb(141, 104, 11);
+            color:white;
+            padding: .5rem;
+            font-size: calc(1rem + 4vw);
+        }
+        #horca {
+            background-image: url(horca.png);
+            width: 261px;
+            height: 345px;
+            display: block;
+            margin: auto;
+        }
+        #palabraElegida {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.5rem;
+            margin: 1rem auto;
+            width: fit-content;
+            span {
+                margin: 1rem;
+            }
+        }
+        #letrasDisponibles {
+            font-family:'Courier New', Courier, monospace;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            div {
+                background-color: darkcyan;
+                font-weight: bold;
+                border-radius: 10px;
+                padding: 1rem;
+                color: white;
+            }
+            div:hover {
+                animation: animarLetraDisponible .5s;
+            }
+        }
+
+        .letraElegida {
+            background-color:darkgrey !important;
+        }
+
+        .letraAcertada {
+            animation: animacionLetraAcertada 1s;
+        }
+
+        .derrota {
+            animation: animacionDerrota 2s infinite;
+        }
+
+        #reiniciar {
+            padding: .5rem 2rem;
+            border-radius: 5px;
+            background-color: blanchedalmond;
+            border: 1px solid rgb(131, 128, 128);
+            display: block;
+            margin: 2rem auto;
+            &:hover {
+                background-color: burlywood;
+            }
+            display: none;
+        }
+
+        @keyframes animarLetraDisponible {
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 4px 4px red;
+            }
+        }
+
+        @keyframes animacionLetraAcertada {
+            50% {
+                font-weight: bold;
+                color: red;
+            }
+        }
+
+         @keyframes animacionDerrota {
+            0%   { transform: rotate(2deg); }
+            50%  { transform: rotate(-2deg); }
+            100% { transform: rotate(2deg); }
+         }
+
+         @keyframes animacionSangre {
+            100% {
+                background-color: rgba(170, 10, 10, 0.521);
+            }
+         } 
+         
+        @keyframes animacionBuitre {
+            50% {
+                bottom: 0;
+            }
+            100% {
+                bottom: 100%
+
+            }
+         } 
+
+         #buitre {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            width: 50%;
+         }
+         
+         
+
+    </style>
+</head>
+<body>
+    <header><h1>Juego del ahorcado</h1></header>
+    <main>
+        <div id="palabraElegida"></div>
+        <div id="horca"></div>
+        <div id="letrasDisponibles"></div>
+        <input type="button" name="reiniciar" id="reiniciar" value="reiniciar">
+    </main>
+    <img src="buitre.png" id="buitre" alt="">
+
+
+</body>
+</html>
+
+<!--
+Los scripts con type="module" ya tienen un comportamiento similar a defer por defecto. Esto significa que:
+
+No bloquean el parseo del HTML: El navegador sigue procesando el documento mientras el script se descarga.
+
+Se ejecutan en orden: Los scripts se ejecutan en el mismo orden en el que aparecen en el HTML, pero solo después de que el documento HTML ha sido completamente parseado.
+
+Se ejecutan una sola vez: Los módulos se ejecutan solo una vez, incluso si son importados varias veces.
+
+Por esta razón, si agregas el atributo defer a un <script type="module">, los validadores de HTML te marcarán un error o una advertencia, ya que es redundante.
+
+En resumen, la combinación correcta y recomendada es:
+
+Para scripts tradicionales: usa defer o async para controlar su comportamiento de carga y ejecución.
+
+Para scripts de tipo módulo: usa solo type="module", y el navegador manejará la carga de forma diferida por ti.
+-->
