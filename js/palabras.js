@@ -1,4 +1,5 @@
-const palabras = [
+/* export para que se pueda usar esa variable o función en otros módulos */
+export const palabras = [
     "abundancia", "aceptacion", "actividad", "admiracion", "adolescente",
     "afortunado", "agricultura", "alimentar", "alucinante", "amistad",
     "analfabeto", "analisis", "anestesia", "ansiedad", "antibiotico",
@@ -46,4 +47,4 @@ const palabras = [
     "vulnerable", "zoologia", "zumbador"
 ];
 
-const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+export const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

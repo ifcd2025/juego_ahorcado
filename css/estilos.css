@@ -1,0 +1,74 @@
+@font-face {
+    font-family: alpharope;
+    src: url(../fuentes/AlphaRope.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+header{
+    padding: .5rem;
+    text-align: center;
+    color:white;
+    font-family: alpharope, arial, sans-serif;
+    font-size: calc(1rem + 4vw);
+    background-color: peru;
+}
+
+#palabraAdivinar {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+    span {
+        margin: auto 1rem;
+    }
+}
+#horca {
+    display: block;
+    margin: auto;
+    width: 261px; /* El ancho de cada imagen dentro de la imagen */
+    height: 345px; /* El alto de la imagen */
+    background-image: url(/imagenes/horca.png);
+}
+
+#letras {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* para que salten de línea si no caben */
+}
+
+.letra {
+    background-color:darkcyan;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    /* Con esto conseguimos que todas las cajas de las letras tengan el mismo
+    ancho sin tener que usar width o algo parecido */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.letra:hover {
+    transition: background-color 1s, box-shadow 1s;
+    background-color: cadetblue;
+    box-shadow: 0 0 4px 2px red;
+}
+
+#reiniciar {
+    display: none;
+    margin: 2rem auto;
+    padding: .5rem 2rem;
+    cursor: pointer;
+    background-color: bisque;
+    border-radius: 5px;
+    border-width: 1px;
+}
+#reiniciar:hover {
+    background-color: burlywood;
+}

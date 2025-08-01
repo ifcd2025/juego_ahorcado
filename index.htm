@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Juego del ahorcado</title>
+   <link rel="stylesheet" href="css/estilos.css">
+   <!-- para que un script pueda usar import debe ser de tipo module.
+    Ya no hace falta poner defer pues ya lo hace al ser de tipo module -->
+   <script src="js/juego.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <h1>Juego del ahorcado</h1>
+    </header>
+    <main>
+        <div id="palabraAdivinar">
+        </div>
+        <div id="horca"></div>
+        <div id="letras">
+        </div>
+        <input type="button" id="reiniciar" name="reiniciar" value="reiniciar">
+    </main>
+</body>
+</html>
