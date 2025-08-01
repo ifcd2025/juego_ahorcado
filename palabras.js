@@ -1,4 +1,4 @@
-export const palabras = [
+const palabras = [
     "abundancia", "aceptacion", "actividad", "admiracion", "adolescente",
     "afortunado", "agricultura", "alimentar", "alucinante", "amistad",
     "analfabeto", "analisis", "anestesia", "ansiedad", "antibiotico",
@@ -46,4 +46,4 @@ export const palabras = [
     "vulnerable", "zoologia", "zumbador"
 ];
 
-export const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
