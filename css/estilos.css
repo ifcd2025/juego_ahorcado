@@ -17,7 +17,7 @@ header{
     color:white;
     font-family: alpharope, arial, sans-serif;
     font-size: calc(1rem + 4vw);
-    background-color: peru;
+    background-color:peru;
 }
 
 #palabraAdivinar {
@@ -71,4 +71,37 @@ header{
 }
 #reiniciar:hover {
     background-color: burlywood;
+}
+
+.derrota {
+    animation: animacionDerrota .5s infinite;
+}
+
+#buitre {
+    position: absolute;
+    width: 40%;
+    aspect-ratio: 1;
+    top: -100%;
+    right: 0;
+    background-image: url("../imagenes/buitre.png");
+    background-size: contain;
+}
+
+
+@keyframes animacionDerrota {
+    0% {
+        transform: rotateZ(-2deg);
+    }
+    50% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(2deg);
+    }
+}
+
+@keyframes animacionBuitre {
+    100% {
+        top:0;
+    }
 }
